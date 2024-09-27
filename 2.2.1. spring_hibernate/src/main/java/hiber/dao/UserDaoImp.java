@@ -39,10 +39,8 @@ public class UserDaoImp implements UserDao {
       query.setParameter("carModel",model);
       query.setParameter("carSeries",series);
       result = query.getSingleResult();
-      System.out.println(result);
       return result;
    }catch (NoResultException e) {
-         System.out.println("There is no user with such a сar!");
       }
       return null;
 }

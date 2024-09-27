@@ -31,7 +31,11 @@ public class UserServiceImp implements UserService {
    @Transactional
    @Override
    public User getUserByModelAndSeries(String model, int series) {
-      return userDao.getUserByModelAndSeries(model,series);
+         if (userDao.getUserByModelAndSeries(model, series) == null) {
+            System.out.println("There is no user with such a сar!");
+         } else {
+            System.out.println(userDao.getUserByModelAndSeries(model, series));
+         }
+      return userDao.getUserByModelAndSeries(model, series);
    }
-
 }
