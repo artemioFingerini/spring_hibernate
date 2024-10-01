@@ -31,11 +31,12 @@ public class UserServiceImp implements UserService {
    @Transactional
    @Override
    public User getUserByModelAndSeries(String model, int series) {
-         if (userDao.getUserByModelAndSeries(model, series) == null) {
+      User result = userDao.getUserByModelAndSeries(model, series);
+         if (result == null) {
             System.out.println("There is no user with such a сar!");
          } else {
-            System.out.println(userDao.getUserByModelAndSeries(model, series));
+            System.out.println(result);
          }
-      return userDao.getUserByModelAndSeries(model, series);
+      return result;
    }
 }
